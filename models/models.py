@@ -167,13 +167,8 @@ def create_modules(module_defs, img_size, cfg):
             modules = nn.BatchNorm2d(filters, momentum=0.03, eps=1E-4)
             if i == 0 and filters == 3:  # normalize RGB image
                 # imagenet mean and var https://pytorch.org/docs/stable/torchvision/models.html#classification
-                #modules.running_mean = torch.tensor([0.485, 0.456, 0.406])
-                #modules.running_var = torch.tensor([0.0524, 0.0502, 0.0506])
-                # cots dataset mean and var
-                a = 1 / 0
-                
-                modules.running_mean = torch.tensor([0.2486, 0.5741, 0.6346])
-                modules.running_var = torch.tensor([0.0431, 0.0352, 0.0367])
+                modules.running_mean = torch.tensor([0.485, 0.456, 0.406])
+                modules.running_var = torch.tensor([0.0524, 0.0502, 0.0506])
 
         elif mdef['type'] == 'maxpool':
             k = mdef['size']  # kernel size
