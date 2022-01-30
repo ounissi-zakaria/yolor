@@ -170,7 +170,8 @@ def create_modules(module_defs, img_size, cfg):
                 #modules.running_mean = torch.tensor([0.485, 0.456, 0.406])
                 #modules.running_var = torch.tensor([0.0524, 0.0502, 0.0506])
                 # cots dataset mean and var
-                print("****** Testing *******")
+                a = 1 / 0
+                
                 modules.running_mean = torch.tensor([0.2486, 0.5741, 0.6346])
                 modules.running_var = torch.tensor([0.0431, 0.0352, 0.0367])
 
